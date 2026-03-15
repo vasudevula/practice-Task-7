@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Task 7</title>
+</head>
+<body>
+
+<script>
+
+fetch("https://jsonplaceholder.typicode.com/todos/")
+.then(res => res.json())
+.then(data => {
+
+let tasks = data.filter(function(todo){
+return todo.completed === true;
+});
+
+tasks.forEach(function(task){
+console.log(task.title);
+});
+
+});
+
+</script>
+
+</body>
+</html>
